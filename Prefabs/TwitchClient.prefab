@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8110571229034344309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8110571229034344311}
+  - component: {fileID: 8110571229034344310}
+  m_Layer: 0
+  m_Name: TwitchClient
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8110571229034344311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8110571229034344309}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8110571229034344310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8110571229034344309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819cd1719f356474396af4b9bef2ab44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  twitchAuth: {fileID: 11400000, guid: 25efeb44d6055a5499ecd612baf63c1a, type: 2}
+  chatCommandEvent: {fileID: 11400000, guid: a8db02876447646439ebf1b3cf8d4c9d, type: 2}
+  chatMessageEvent: {fileID: 11400000, guid: 5e2d7c1cf9111aa4c8fa0f3f781ed9d1, type: 2}
+  onFollowEvent: {fileID: 11400000, guid: 28e49e18e0ff68840a9d59c9576ad2c3, type: 2}

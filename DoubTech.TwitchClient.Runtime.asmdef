@@ -1,0 +1,16 @@
+{
+    "name": "DoubTech.TwitchClient.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:fd6c70425797631499d4d9ed072d4e9c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
