@@ -1,1 +1,8 @@
-{"name":"com.doubtech.twitch.twitchclient", "displayName":"DoubTech - Twitch Client 2", "version":"1.0.0"}
+{
+  "name": "com.doubtech.twitch.twitchclient",
+  "displayName": "DoubTech - Twitch Client 2",
+  "version": "1.0.0",
+  "dependencies": {
+    "com.newtonsoft.jsondotnet": "12.0.0"
+  }
+}
