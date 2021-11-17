@@ -21,6 +21,8 @@ namespace DoubTech.TwitchClient
         [SerializeField] private ChatCommandEvent chatCommandEvent;
         [SerializeField] private ChatMessageEvent chatMessageEvent;
         [SerializeField] private OnFollowEvent onFollowEvent;
+        [SerializeField] private TwitchUserEvent onUserJoinedEvent;
+        [SerializeField] private TwitchUserEvent onUserLeftEvent;
 
 
         private Client client;
@@ -36,6 +38,8 @@ namespace DoubTech.TwitchClient
             client.Initialize(credentials, twitchAuth.channel);
             client.OnConnected += OnConnected;
             client.OnJoinedChannel += OnJoinedChannel;
+            client.OnUserJoined += OnUserJoinedChannel;
+            client.OnUserLeft += OnUserLeftChannel;
             client.OnMessageReceived += OnMessageReceived;
             client.OnChatCommandReceived += OnChatCommandReceived;
             client.Connect();
@@ -55,6 +59,24 @@ namespace DoubTech.TwitchClient
 
             api = new Api();
             api.Settings.ClientId = twitchAuth.botAccessToken;
+        }
+
+        private void OnUserLeftChannel(object sender, OnUserLeftArgs e)
+        {
+            Debug.Log($"<color=red>{e.Username} has left.</color>");
+            onUserLeftEvent?.Invoke(new UserInfo()
+            {
+                username = e.Username
+            });
+        }
+
+        private void OnUserJoinedChannel(object sender, OnUserJoinedArgs e)
+        {
+            Debug.Log($"<color=green>{e.Username} has joined.</color>");
+            onUserJoinedEvent?.Invoke(new UserInfo()
+            {
+                username = e.Username
+            });
         }
 
         private void OnFollow(object sender, OnFollowArgs e)
@@ -153,7 +175,6 @@ namespace DoubTech.TwitchClient
 
         private void OnJoinedChannel(object sender, OnJoinedChannelArgs e)
         {
-
         }
 
         private void OnConnected(object sender, OnConnectedArgs e)

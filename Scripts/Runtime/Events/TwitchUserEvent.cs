@@ -10,7 +10,7 @@ namespace DoubTech.TwitchClient.Events
     [CreateAssetMenu(fileName = "ChatCommandEvent",
         menuName = "DoubTech/Twitch Client/Events/Chat Command Event")]
     [Serializable]
-    public class ChatCommandEvent : GameEvent<ChatCommand>
+    public class TwitchUserEvent : GameEvent<UserInfo>
     {
     }
 }

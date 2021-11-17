@@ -17,6 +17,7 @@ namespace DoubTech.TwitchClient.Listeners
 
         [SerializeField] private ChatMessageEvent gameEvent;
         [SerializeField] private ChatMessageUnityEvent onEvent = new ChatMessageUnityEvent();
+        [SerializeField] private UnityEvent<string> onMessage = new UnityEvent<string>();
 
         public override ChatMessageEvent GameEvent => gameEvent;
         public override ChatMessageUnityEvent OnEvent => onEvent;
@@ -31,6 +32,8 @@ namespace DoubTech.TwitchClient.Listeners
             if (string.IsNullOrEmpty(senderFilter) || t.UserId == senderFilter)
             {
                 base.OnEventRaised(t);
+
+                onMessage?.Invoke(t.Message);
             }
         }
     }
