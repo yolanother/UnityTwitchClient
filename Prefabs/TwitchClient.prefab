@@ -43,7 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819cd1719f356474396af4b9bef2ab44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twitchAuth: {fileID: 11400000, guid: 25efeb44d6055a5499ecd612baf63c1a, type: 2}
+  twitchAuth: {fileID: 11400000, guid: b4e96dbf4d7c8f54987eb086df345a2f, type: 2}
   chatCommandEvent: {fileID: 11400000, guid: a8db02876447646439ebf1b3cf8d4c9d, type: 2}
   chatMessageEvent: {fileID: 11400000, guid: 5e2d7c1cf9111aa4c8fa0f3f781ed9d1, type: 2}
   onFollowEvent: {fileID: 11400000, guid: 28e49e18e0ff68840a9d59c9576ad2c3, type: 2}
+  onUserJoinedEvent: {fileID: 11400000, guid: d84d80b997bffbf42b91c61bf66c4db2, type: 2}
+  onUserLeftEvent: {fileID: 11400000, guid: 22a6b7912601e5d418d09fd60d3a4ec2, type: 2}
