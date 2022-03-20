@@ -42,7 +42,10 @@ namespace DoubTech.TwitchClient
             client.OnUserLeft += OnUserLeftChannel;
             client.OnMessageReceived += OnMessageReceived;
             client.OnChatCommandReceived += OnChatCommandReceived;
-            client.Connect();
+            if (!client.Connect())
+            {
+                Debug.LogError("Failed to connect to twitch client.");
+            }
 
             pubSub = new PubSub();
             // pubSub.OnWhisper += OnWhisper;
@@ -175,11 +178,22 @@ namespace DoubTech.TwitchClient
 
         private void OnJoinedChannel(object sender, OnJoinedChannelArgs e)
         {
+            Log("Joined channel.");
+        }
+
+        private void Log(string message)
+        {
+            Debug.Log($"<color=grey>[Twitch Client]</color>{message}");
+        }
+
+        private void OnConnectedToServer()
+        {
+            Log("Connected to the server.");
         }
 
         private void OnConnected(object sender, OnConnectedArgs e)
         {
-            Debug.Log($"The bot {e.BotUsername} succesfully connected to Twitch.");
+            Log($"The bot {e.BotUsername} succesfully connected to Twitch.");
             if (!string.IsNullOrWhiteSpace(e.AutoJoinChannel))
                 Debug.Log(
                     $"The bot will now attempt to automatically join the channel provided when the Initialize method was called: {e.AutoJoinChannel}");
